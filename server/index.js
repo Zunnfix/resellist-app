@@ -3,6 +3,8 @@ const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
 
+const { register, login, logout } = require('./controllers/authController')
+
 const app = express();
 const { SESSION_SECRET, CONNECTION_STRING, SERVER_PORT } = process.env
 
@@ -21,7 +23,9 @@ massive(CONNECTION_STRING).then(db => {
 })
 
 // Endpoints
-
+app.post('/auth/register', register)
+app.post('/auth/login', login)
+app.get('/auth/logout', logout)
 
 app.get('/api/user', function(req, res) {
   if(req.session.user) {

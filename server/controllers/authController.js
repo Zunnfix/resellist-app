@@ -25,10 +25,8 @@ module.exports = {
   register: async function (req, res) {
     const db = req.app.get('db')
     const {
-      firstName,
-      lastName,
-      username,
-      password,
+      firstName, lastName,
+      username, password,
       email
     } = req.body
     let user = await db.checkForUser([username, email])
