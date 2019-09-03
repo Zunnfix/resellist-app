@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../assets/sass/components/Lander.scss';
+import Navbar from './Navbar'
 
 
-export default function Lander() {
-  return (
-    <div>
-
-    </div>
-  );
+export default class Lander extends Component {
+  render() {
+    return (
+      <div>
+        <Navbar />
+      </div>
+    );
+  }
 }
