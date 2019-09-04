@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 module.exports = {
   login: async function (req, res) {
@@ -11,7 +11,7 @@ module.exports = {
         id: info[0].id,
         firstName: info[0].first_name,
         lastName: info[0].last_name,
-        username: info[0].username,
+        username,
         email: info[0].email,
         img: info[0].profile_img
       }
@@ -36,7 +36,8 @@ module.exports = {
       })
     } else {
       const hash = await bcrypt.hash(password, 10)
-      let newUser = await db.addUser([firstName, lastName, username, hash, email])
+      console.log(hash)
+      let newUser = await db.registerUser([firstName, lastName, username, hash, email])
       req.session.user = {
         id: newUser[0].id,
         name: firstName + ' ' + lastName,

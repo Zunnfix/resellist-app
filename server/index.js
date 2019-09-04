@@ -8,6 +8,8 @@ const { register, login, logout } = require('./controllers/authController')
 const app = express();
 const { SESSION_SECRET, CONNECTION_STRING, SERVER_PORT } = process.env
 
+app.use(express.json())
+
 app.use(session({
   resave: false,
   saveUninitialized: true,
