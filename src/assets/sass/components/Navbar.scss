@@ -1,9 +1,124 @@
 nav {
+  font-family: 'LatoBOLD';
+  position: fixed;
   width: 100%;
   height: 68px;
+  display: flex;
+  justify-content: center;
   background: -webkit-linear-gradient(90deg, #00ab80, #00a980 50%, #026d6d);
   background: linear-gradient(90deg, #00ab80, #00a980 50%, #026d6d);
-  .nav-container {
-    width: 900px;
+  padding: 10px 24px;
+  z-index: 100;
+
+  .btn-lte-green,
+  .btn-lte-green:hover,
+  .btn-lte-green:focus,
+  .btn-lte-green:active {
+    border-color: #00ab80 !important;
+    background-color: #00ab80 !important;
+    box-shadow: none !important;
   }
+
+  .form-control,
+  .form-control:focus,
+  .form-control::placeholder {
+    width: 340px;
+    font-family: 'Lato';
+    color: #fff;
+    border: none;
+    background-color: #009770;
+    border-top-right-radius: 0;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    box-shadow: none;
+  }
+
+  .btn {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 0;
+  }
+
+  .navbar-light .navbar-brand,
+  .navbar-light .navbar-brand:hover {
+    color: #fff;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1475px;
+
+    .logo {
+      height: 24px;
+      width: auto;
+    }
+
+    form {
+      padding-left: 60px;
+      display: flex;
+      min-width: 300px;
+    }
+
+    .link-wrap {
+      display: flex;
+      justify-content: flex-end;
+      min-width: 340px;
+
+      .img-link {
+        display: flex;
+        justify-content: space-between;
+        width: 92px;
+
+        .item-feature__icon {
+          display: flex;
+          align-items: center;
+        }
+
+        .icon-camera::before {
+          margin-top: 6px;
+          font-size: 24px;
+        }
+      }
+
+      a,
+      a:hover {
+        text-decoration: none;
+        font-size: 19px;
+        padding-left: 28px;
+        color: #fff;
+      }
+    }
+  }
+
+  .menu-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 938px) {
+  nav {
+    .nav-container {
+      form {
+        display: none;
+      }
+
+      .link-wrap {
+        display: none;
+      }
+    }
+
+    .menu-icon {
+      display: block;
+
+      img {
+        height: 27px;
+        width: auto;
+      }
+    }
+  }
+
 }
