@@ -1,16 +1,70 @@
+.container {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 .card {
-  height: 450px;
-  width: 236px;
+  display: inline-block;
+  position: relative;
+  height: auto;
+  width: 234px;
   overflow: hidden;
   border-radius: 12px;
-  margin-top: 12px;
-  margin-right: 12px;
+  margin: 12px 7px 0 7px;
+
+  p {
+    margin: 0;
+  }
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
+  .card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .price {
+    font-family: 'LatoBLACK';
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .location {
+    color: #7c7c7c;
+  }
+
+  .star {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+
+    .fa-star {
+      font-family: 'FA-Reg';
+      content: "\f005";
+      color: #a5a5a5;
+      font-size: 21px;
+      padding: 10px 8px;
+    }
+
+    .fa-star:hover {
+      font-family: 'FA-Solid';
+      content: "\f005";
+      cursor: pointer;
+    }
+  }
+}
+
+.card-img {
+  width: auto;
+  height: 280px;
+  overflow: hidden;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .card:hover {

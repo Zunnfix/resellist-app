@@ -22,22 +22,22 @@ nav {
   .form-control,
   .form-control:focus,
   .form-control::placeholder {
-    width: 340px;
+    width: 400px;
     font-family: 'Lato';
     color: #fff;
     border: none;
     background-color: #009770;
     border-top-right-radius: 0;
-    border-top-left-radius: 5px;
+    border-top-left-radius: 10px;
     border-bottom-right-radius: 0;
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 10px;
     box-shadow: none;
   }
 
   .btn {
-    border-top-right-radius: 5px;
+    border-top-right-radius: 10px;
     border-top-left-radius: 0;
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 10px;
     border-bottom-left-radius: 0;
   }
 
@@ -58,9 +58,22 @@ nav {
     }
 
     form {
-      padding-left: 60px;
+      padding-left: calc(12vw);
       display: flex;
       min-width: 300px;
+      position: relative;
+      .search-icon {
+        font-size: 19px;
+        color: #fff;
+        position: absolute;
+        top: 8px;
+        right: 416px;
+      }
+      input {
+        height: 44px;
+        padding: 16px;
+        padding-left: 48px;
+      }
     }
 
     .link-wrap {
@@ -99,11 +112,11 @@ nav {
   }
 }
 
-@media (max-width: 938px) {
+@media (max-width: 1082px) {
   nav {
     .nav-container {
       form {
-        display: none;
+        padding-left: calc(2vw);
       }
 
       .link-wrap {
@@ -113,7 +126,7 @@ nav {
 
     .menu-icon {
       display: block;
-
+      margin-left: 12px;
       img {
         height: 27px;
         width: auto;

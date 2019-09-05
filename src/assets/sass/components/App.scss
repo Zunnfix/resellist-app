@@ -10,31 +10,73 @@
   font-family: 'LatoBOLD';
   src: url(../../fonts/Lato/Lato-Bold.ttf)
 }
+@font-face {
+  font-family: 'LatoBLACK';
+  src: url(../../fonts/Lato/Lato-Black.ttf)
+}
+@font-face {
+  font-family: 'FA-Reg';
+  src: url(../../fonts/font-awesome/Font-Awesome-5-Free-Regular-400.otf)
+}
+@font-face {
+  font-family: 'FA-Solid';
+  src: url(../../fonts/font-awesome/Font-Awesome-5-Free-Solid-900.otf)
+}
+
 
 body {
   font-family: 'Lato'
 }
 
 header {
-  font-family: 'LatoBOLD';
+  font-family: 'Lato';
+  font-size: 16px;
   width: 100%;
   height: 136px;
   display: flex;
   justify-content: center;
   background: -webkit-linear-gradient(90deg, #00ab80, #00a980 50%, #026d6d);
   background: linear-gradient(90deg, #00ab80, #00a980 50%, #026d6d);
-  .navbar-light .navbar-brand, .navbar-light .navbar-brand:hover {
+  padding-top: 88px;
+  .header-links {
+    display: flex;
+    min-width: 650px; 
+  }
+  a,
+  a:hover {
     color: #fff;
+    margin: 0 12px;
+  }
+  .dropdown {
+    margin: -2px 12px 0;
+  }
+  .btn, .btn:hover {
+    padding: 0;
+    border: none;
+    color: #fff;
+    box-shadow: none !important;
+  }
+  .btn:hover {
+    text-decoration: underline;
+  }
+  .dropdown-menu {
+    a,
+    a:hover {
+      margin: 0;
+    }
+    .dropdown-item:active {
+      background-color: #00ab80;
+    }
   }
 }
 
 .container {
-  margin-top: 16px;
+  margin-top: 8px;
   max-width: 1507px;
 }
 
 .box {
-  height: 2000px;
+  height: 1500px;
   overflow: auto;
 }
 
