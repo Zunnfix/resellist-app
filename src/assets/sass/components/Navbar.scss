@@ -114,6 +114,11 @@ nav {
   }
 }
 
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 @media (max-width: 1082px) {
   nav {
     .nav-container {
