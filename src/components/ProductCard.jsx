@@ -4,11 +4,11 @@ import '../assets/sass/components/ProductCard.scss'
 import { Link } from 'react-router-dom'
 
 export default function ProductCard(props) {
-
+  const [ value, saved ] = React.useState(false);
   const { img, item, price, city, state } = props.product
   return (
     <Card>
-      <Link /*to={`/item/${product.id}`}*/>
+      <Link /*to={`/item/${props.product.id}`}*/>
         <div className="card-img">
           <img src={img} alt="product" />
         </div>
@@ -30,7 +30,7 @@ export default function ProductCard(props) {
           </Tooltip>
         }
       >
-        <div className="star"><i className="far fa-star"></i></div>
+      <div className="star" onClick={() => saved(true)}><i className="far fa-star"></i></div>
       </OverlayTrigger>
     </Card>
   )
