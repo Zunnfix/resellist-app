@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="nav-container">
         <Link to='/'><img className="logo" src={logo} alt="Logo" /></Link>
         <Form>
-          <div className="search-icon"><i class="fas fa-search"></i></div>
+          <div className="search-icon"><i className="fas fa-search"></i></div>
           <FormControl type="text" placeholder="Search" />
           <Button className="btn-lte-green">GO</Button>
         </Form>

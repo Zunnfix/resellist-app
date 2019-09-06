@@ -31,11 +31,11 @@ export default class Lander extends Component {
         <Navbar />
         <header>
           <div className="header-links">
-            <Link>Cars & trucks</Link>
-            <Link>Furniture</Link>
-            <Link>Appliances</Link>
-            <Link>Games & Toys</Link>
-            <Link>Clothing & shoes</Link>
+            <Link to=''>Cars & trucks</Link>
+            <Link to=''>Furniture</Link>
+            <Link to=''>Appliances</Link>
+            <Link to=''>Games & Toys</Link>
+            <Link to=''>Clothing & shoes</Link>
             <DropdownButton
               variant="none"
               alignRight
