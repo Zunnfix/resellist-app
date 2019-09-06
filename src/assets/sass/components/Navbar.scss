@@ -62,6 +62,7 @@ nav {
       display: flex;
       min-width: 300px;
       position: relative;
+
       .search-icon {
         font-size: 19px;
         color: #fff;
@@ -69,6 +70,7 @@ nav {
         top: 8px;
         right: 416px;
       }
+
       input {
         height: 44px;
         padding: 16px;
@@ -81,28 +83,28 @@ nav {
       justify-content: flex-end;
       min-width: 340px;
 
-      .img-link {
+
+      a,
+      a:hover,
+      .link,
+      .link:hover {
         display: flex;
-        justify-content: space-between;
-        width: 92px;
+        text-decoration: none;
+        font-size: 19px;
+        padding-left: 28px;
+        color: #fff;
+        cursor: pointer;
 
         .item-feature__icon {
           display: flex;
           align-items: center;
+          width: 30px;
         }
 
         .icon-camera::before {
           margin-top: 6px;
           font-size: 24px;
         }
-      }
-
-      a,
-      a:hover {
-        text-decoration: none;
-        font-size: 19px;
-        padding-left: 28px;
-        color: #fff;
       }
     }
   }
@@ -127,6 +129,7 @@ nav {
     .menu-icon {
       display: block;
       margin-left: 12px;
+
       img {
         height: 27px;
         width: auto;

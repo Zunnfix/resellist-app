@@ -6,10 +6,16 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/images/logo-offerup.png';
 import menu from '../assets/images/menu-icon.png';
 import { Form, FormControl, Button } from 'react-bootstrap';
+import PostModal from './PostModal';
 
 export default function Navbar() {
+  const [modalShow, setModalShow] = React.useState(false);
   return (
     <nav>
+      <PostModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
       <div className="nav-container">
         <Link to='/'><img className="logo" src={logo} alt="Logo" /></Link>
         <Form>
@@ -18,12 +24,12 @@ export default function Navbar() {
           <Button className="btn-lte-green">GO</Button>
         </Form>
         <div className="link-wrap">
-          <Link className="img-link" to=''>
+          <div className="link" onClick={() => setModalShow(true)}>
             <div className="item-feature__icon">
               <i className="icon-camera"></i>
             </div>
             Sell
-          </Link>
+          </div>
           <Link to=''>About</Link>
           <Link to=''>Login</Link>
           <Link to=''>Sign up</Link>
