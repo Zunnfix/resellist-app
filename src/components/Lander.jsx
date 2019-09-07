@@ -31,7 +31,7 @@ export default class Lander extends Component {
         <Navbar />
         <header>
           <div className="header-links">
-            <Link>Cars & trucks</Link>
+            <Link>Cell Phones</Link>
             <Link>Furniture</Link>
             <Link>Appliances</Link>
             <Link>Games & Toys</Link>
