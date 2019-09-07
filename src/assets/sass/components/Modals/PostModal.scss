@@ -1,0 +1,76 @@
+.modal-header {
+  padding: 0.7rem 1rem;
+}
+
+.modal-footer {
+  padding: 0.7rem 1rem;
+  .fa-angle-right {
+    margin-top: 4px;
+  }
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding: 2rem;
+  .img-filler {
+    width: 400px;
+    height: 400px;
+    background: url('https://www.metatube.com/assets/metatube/video/img/Upload.svg') no-repeat center;
+    background-size: 150px 150px;
+    border: 6px dashed #d1d1d1;
+    margin: 4px 18px 16px;
+  }
+  img {
+    margin: 8px 18px 20px;
+    height: 392px;
+    width: auto;
+    object-fit: contain;
+  }
+  .item-form-wrap {
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: 8px 0;
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+    }
+    .form-text {
+      color: #454545;
+      font-size: 22px;
+      margin: 0 5px 2px 12px;
+    }
+    .input-img, .input-item, .input-city, .input-state {
+      width: 100%;
+    }
+    input, select {
+      padding: 8px 12px;
+      border: none;
+      border-bottom: 1px solid #d3d3d3
+    }
+    select {
+      color: #454545;
+      width: 100%;
+      padding: 9px 8px;
+    }
+    .input-item, .input-price {
+      font-size: 22px;
+      padding: 8px 12px;
+    }
+    .input-price {
+      width: 90%;
+    }
+    .input-state {
+      width: 35%;
+    }
+    .input-city {
+      width: 80%;
+      margin: 0 16px;
+    }
+  }
+}
