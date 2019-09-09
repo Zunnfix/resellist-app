@@ -15,11 +15,11 @@ function LoginModal(props) {
         <h4>Login</h4>
         <div className="input-wrap">
           <div className="input-group">
-            <i class="fas fa-user"></i>
+            <i className="fas fa-user"></i>
             <input className="input" type="text" placeholder="Username"/>
           </div>
           <div className="input-group">
-            <i class="fas fa-lock"></i>
+            <i className="fas fa-lock"></i>
             <input className="input" type="password" placeholder="Password"/>
           </div>
         </div>
