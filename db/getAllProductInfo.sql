@@ -1,1 +1,1 @@
-SELECT * FROM sellist_products;
+SELECT * FROM sellist_products ORDER BY id DESC;

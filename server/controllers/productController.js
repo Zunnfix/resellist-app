@@ -15,13 +15,27 @@ module.exports = {
   },
   setFavorite: async function (req, res) {
     const db = req.app.get('db')
-    await db.setFavorite([ req.session.user.id, req.body.id ])
-    .then( product => {
-      res.status(200).json(product)
-    })
-    .catch(err => {
-      res.status(500).json({ errMessage: "Whoops! something went wrong." })
-      console.log(err)
-    })
-  }
+    await db
+      .setFavorite([ req.session.user.id, req.body.id ])
+      .then( product => {
+        res.status(200).json(product)
+      })
+      .catch(err => {
+        res.status(500).json({ errMessage: "Whoops! something went wrong." })
+        console.log(err)
+      })
+  },
+  editProduct: async function (req, res) {
+    const db = req.app.get('db')
+    const { id } = req.params
+    const { item } = req.body
+    const editProduct = await db.editProduct(item, id)
+    res.status(200).json(editProduct)
+  },
+  deleteProduct: async function (req, res) {
+    const db = req.app.get('db')
+    const { id } = req.params
+    const deleteProduct = await db.deleteProduct(id)
+    res.status(200).json(deleteProduct)
+  },
 }

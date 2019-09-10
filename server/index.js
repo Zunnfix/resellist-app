@@ -5,7 +5,7 @@ const session = require('express-session');
 
 const { getAllProducts } = require('./controllers/landerController')
 const { register, login, logout } = require('./controllers/authController')
-const { postProduct, setFavorite } = require('./controllers/productController')
+const { postProduct, setFavorite, editProduct, deleteProduct } = require('./controllers/productController')
 
 const app = express();
 const { SESSION_SECRET, CONNECTION_STRING, SERVER_PORT } = process.env
@@ -27,6 +27,8 @@ massive(CONNECTION_STRING).then(db => {
 })
 
 // Endpoints
+app.put('/api/edit-product/:id', editProduct)
+app.delete('/api/delete-product/:id', deleteProduct)
 app.post('/api/set-favorite', setFavorite)
 app.post('/api/post-product', postProduct)
 app.get('/api/all-products', getAllProducts)
