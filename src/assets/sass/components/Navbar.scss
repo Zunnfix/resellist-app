@@ -51,6 +51,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 1475px;
+    font-size: 19px;
+    color: #fff;
 
     .logo {
       height: 24px;
@@ -64,8 +66,6 @@ nav {
       position: relative;
 
       .search-icon {
-        font-size: 19px;
-        color: #fff;
         position: absolute;
         top: 8px;
         right: 416px;
@@ -80,8 +80,37 @@ nav {
 
     .link-wrap {
       display: flex;
+      align-content: center;
       justify-content: flex-end;
       min-width: 340px;
+
+      .link-group {
+        display: flex;
+      }
+
+      .logged-in {
+        display: flex;
+      }
+
+      .user {
+        display: flex;
+        margin-left: 14px;
+      }
+
+      .chat {
+        width: 30px;
+        margin: 0 14px;
+      }
+
+      .fas {
+        font-size: 27px;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 20px;
+      }
 
 
       a,
@@ -91,7 +120,7 @@ nav {
         display: flex;
         text-decoration: none;
         font-size: 19px;
-        padding-left: 28px;
+        padding: 0 14px;
         color: #fff;
         cursor: pointer;
 

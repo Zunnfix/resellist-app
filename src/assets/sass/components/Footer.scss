@@ -1,0 +1,53 @@
+footer {
+  background-image: url(https://assets.offerup.com/web/images/footer-cover.78e3f94c.jpg);
+  width: 100%;
+  padding: 16px 0 24px;
+  color: #fff;
+  .container {
+    display: flex;
+    height: 112px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 600px;
+    .links {
+      display: flex;
+      justify-content: center;
+      .link {
+        margin: 0 15px;
+      }
+    }
+    .link:hover, .social-link:hover {
+      cursor: pointer;
+    }
+    .link:hover {
+      text-decoration: underline;
+    }
+    .social {
+      display: flex;
+      justify-content: center;
+      .social-link {
+        width: 30px;
+        height: 30px;
+        background-color: #145853;
+        border-radius: 30px;
+        align-content: center;
+        margin: 0 6px;
+      }
+      .social-link:hover {
+        background-color: #0f4e48;
+      }
+      .fab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        height: 100%;
+      }
+    }
+    .copyright {
+      display: flex;
+      justify-content: center;
+      font-size: 14px;
+    }
+  }
+}
