@@ -1,0 +1,22 @@
+.maps-wrap {
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 24px 0;
+  .maps {
+    height: 300px;
+  }
+  .text {
+    font-weight: 600;
+    padding: 8px 14px;
+    .info {
+      font-size: 14px;
+      font-weight: 300;
+      margin-left: 14px;
+      color: #777777;
+    }
+  }
+}
+.maps-wrap, .maps {
+  width: 100%;
+}
