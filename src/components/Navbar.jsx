@@ -10,7 +10,7 @@ import PostModal from './PostModal';
 import LoginModal from './LoginModal';
 import RegisterModal from './RegisterModal';
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [registerModalShow, setRegisterModalShow] = React.useState(false);
   const [loginModalShow, setLoginModalShow] = React.useState(false);
   const [postModalShow, setPostModalShow] = React.useState(false);
@@ -43,8 +43,22 @@ export default function Navbar() {
             Sell
           </div>
           <Link to=''>About</Link>
-          <div className="link" onClick={() => setLoginModalShow(true)}>Login</div>
-          <div className="link" onClick={() => setRegisterModalShow(true)}>Sign up</div>
+          { props.isLoggedIn
+            ? <div className="logged-out">
+                <div className="link" onClick={() => setLoginModalShow(true)}>Login</div>
+                <div className="link" onClick={() => setRegisterModalShow(true)}>Sign up</div>
+              </div>
+            : <div className="logged-in">
+                <div className="chat">
+                  <i className="fas fa-comment-dots"></i>
+                </div>
+                <div className="user">
+                  <img src="https://images.offerup.com/G_WanU6u5IpL1vVVfMajOkU48es=/100x100/smart/cb71/o63608076_48635.jpg" alt=""/>
+                  <div className="name">Chase</div>
+                </div>
+              </div>
+          }
+          
         </div>
         <div className="menu-icon"><img src={menu} alt="Menu"/></div>
       </div>

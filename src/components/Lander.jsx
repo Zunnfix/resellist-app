@@ -10,7 +10,8 @@ export default class Lander extends Component {
   constructor() {
     super()
     this.state = {
-      products: []
+      products: [],
+      isLoggedIn: false
     }
   }
 
@@ -25,10 +26,21 @@ export default class Lander extends Component {
       .catch(err => console.log(err))
   }
 
+  setFavorite = () => {
+    
+  }
+
+  saveFavorite = () => {
+    Axios
+      .post('/api/add-favorite')
+      .then(res => {})
+      .catch(err => console.log(err))
+  }
+
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar isLoggedIn={this.state.isLoggedIn} />
         <header>
           <div className="header-links">
             <Link to=''>Cars & trucks</Link>
@@ -52,7 +64,13 @@ export default class Lander extends Component {
           <div className="product-wrap">
             <div className="card-container">
               {this.state.products.map((product) =>
-                <ProductCard key={product.id} product={product} />
+                <ProductCard 
+                  key={product.id} 
+                  product={product} 
+                  saveFavorite={this.saveFavorite} 
+                  // favorite={favorite} 
+                  // setFavorite={setFavorite} 
+                />
               )}
             </div>
           </div>
