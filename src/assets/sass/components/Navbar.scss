@@ -10,6 +10,12 @@ nav {
   padding: 10px 24px;
   z-index: 100;
 
+  .icon {
+    display: none;
+    height: 40px;
+    width: auto;
+  }
+
   .btn-lte-green,
   .btn-lte-green:hover,
   .btn-lte-green:focus,
@@ -55,14 +61,14 @@ nav {
     color: #fff;
 
     .logo {
-      height: 24px;
+      height: 26px;
       width: auto;
     }
 
     form {
-      padding-left: calc(12vw);
+      padding-left: calc(4vw);
       display: flex;
-      min-width: 300px;
+      min-width: 250px;
       position: relative;
 
       .search-icon {
@@ -110,6 +116,7 @@ nav {
         width: 30px;
         height: 30px;
         border-radius: 20px;
+        margin-right: 10px;
       }
 
 
@@ -152,7 +159,13 @@ nav {
   nav {
     .nav-container {
       form {
-        padding-left: calc(2vw);
+        padding-right: 10vw;
+        padding-left: 0vw;
+
+        .search-icon {
+          right: unset;
+          left: 16px;
+        }
       }
 
       .link-wrap {
@@ -162,7 +175,7 @@ nav {
 
     .menu-icon {
       display: block;
-      margin-left: 12px;
+      padding: 10px;
 
       img {
         height: 27px;
@@ -170,5 +183,83 @@ nav {
       }
     }
   }
+}
 
+@media (max-width: 796px) {
+  form {
+    .form-control {
+      width: 280px;
+    }
+  }
+}
+
+@media (max-width: 682px) {
+  nav {
+    .nav-container {
+
+      form {
+        padding-right: 2vw;
+        padding-left: 0vw;
+
+        .search-icon {
+          right: unset;
+          left: 16px;
+        }
+      }
+      .form-control {
+        width: 300px;
+      }
+
+      .search-icon {
+        right: unset;
+        left: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  nav {
+    padding: 10px 14px;
+    .nav-container {
+
+      .form-control {
+        width: 300px;
+
+        form {
+          padding-right: 0vw;
+          padding-left: 2vw;
+        }
+      }
+
+      .search-icon {
+        right: unset;
+        left: 20px;
+      }
+
+      .logo {
+        display: none;
+      }
+
+      .icon {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+@media (max-width: 496px) {
+  nav {
+    padding: 10px 6px;
+    .nav-container {
+      .form-control {
+        width: 200px;
+
+        form {
+          padding-right: 1vw;
+          padding-left: 1vw;
+        }
+      }
+    }
+  }
 }

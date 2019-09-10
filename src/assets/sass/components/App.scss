@@ -40,7 +40,8 @@ header {
   padding-top: 88px;
   .header-links {
     display: flex;
-    min-width: 650px; 
+    min-width: 685px;
+    padding: 0 16px;
   }
   a,
   a:hover {
@@ -78,6 +79,13 @@ header {
 .box {
   height: 1500px;
   overflow: auto;
+}
+
+@media (max-width: 700px) {
+  header {
+    justify-content: start;
+    overflow: hidden;
+  }
 }
 
 // @keyframes App-logo-spin {

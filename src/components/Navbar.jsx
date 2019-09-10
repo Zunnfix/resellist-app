@@ -3,7 +3,8 @@ import '../assets/sass/components/Lander.scss';
 import '../assets/sass/components/Navbar.scss'
 import '../assets/fonts/micons/micons.css';
 import { Link } from 'react-router-dom'
-import logo from '../assets/images/logo-offerup.png';
+import logo from '../assets/images/Sellist-Logo.png';
+import icon from '../assets/images/Sellist-Icon.png';
 import menu from '../assets/images/menu-icon.png';
 import { Form, FormControl, Button } from 'react-bootstrap';
 import PostModal from './PostModal';
@@ -30,9 +31,10 @@ export default function Navbar(props) {
       />
       <div className="nav-container">
         <Link to='/'><img className="logo" src={logo} alt="Logo" /></Link>
+        <Link to='/'><img className="icon" src={icon} alt="Logo" /></Link>
         <Form>
-          <div className="search-icon"><i className="fas fa-search"></i></div>
           <FormControl type="text" placeholder="Search" />
+          <div className="search-icon"><i className="fas fa-search"></i></div>
           <Button className="btn-lte-green">GO</Button>
         </Form>
         <div className="link-wrap">
