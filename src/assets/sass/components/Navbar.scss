@@ -25,6 +25,11 @@ nav {
     box-shadow: none !important;
   }
 
+  .btn-lte-green:hover {
+    border-color: #05a57d !important;
+    background-color: #05a57d !important;
+  }
+
   .form-control,
   .form-control:focus,
   .form-control::placeholder {
@@ -90,16 +95,14 @@ nav {
       justify-content: flex-end;
       min-width: 340px;
 
-      .link-group {
-        display: flex;
-      }
-
-      .logged-in {
+      .user,
+      .link-group,
+      .logged-in,
+      .logged-out {
         display: flex;
       }
 
       .user {
-        display: flex;
         margin-left: 14px;
       }
 
@@ -188,7 +191,7 @@ nav {
 @media (max-width: 796px) {
   form {
     .form-control {
-      width: 280px;
+      width: 300px;
     }
   }
 }
@@ -206,6 +209,7 @@ nav {
           left: 16px;
         }
       }
+
       .form-control {
         width: 300px;
       }
@@ -218,9 +222,10 @@ nav {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 586px) {
   nav {
     padding: 10px 14px;
+
     .nav-container {
 
       .form-control {
@@ -251,6 +256,7 @@ nav {
 @media (max-width: 496px) {
   nav {
     padding: 10px 6px;
+
     .nav-container {
       .form-control {
         width: 200px;

@@ -1,10 +1,11 @@
 .modal-content {
   .login-body {
+    font-size: 18px;
     padding: 34px;
     padding-bottom: 10px;
-
+    
     h4 {
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 28px;
     }
 
@@ -18,18 +19,20 @@
 
         .fas {
           color: #454545;
-          padding: 10px 10px 6px 6px;
+          padding: 12px 6px 4px 6px;
         }
 
         .input {
+          font-size: 18px;
           border: none;
           width: 200px;
-          padding: 6px 8px;
+          padding: 7px 8px;
         }
       }
     }
 
     .btn-lte-green {
+      font-size: 19px;
       border-color: #00ab80 !important;
       background-color: #00ab80 !important;
       box-shadow: none !important;
@@ -54,7 +57,7 @@
     justify-content: center;
   }
   .text {
-    font-size: 13px;
+    font-size: 15px;
     margin: 6px 0 10px;
   }
 

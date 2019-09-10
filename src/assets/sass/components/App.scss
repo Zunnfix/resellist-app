@@ -28,6 +28,10 @@ body {
   font-family: 'Lato'
 }
 
+.btn {
+  transition: 95ms;
+}
+
 header {
   font-family: 'Lato';
   font-size: 16px;
@@ -41,7 +45,7 @@ header {
   .header-links {
     display: flex;
     min-width: 685px;
-    padding: 0 16px;
+    padding: 0 2px;
   }
   a,
   a:hover {
