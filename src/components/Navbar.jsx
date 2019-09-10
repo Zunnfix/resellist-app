@@ -45,7 +45,7 @@ export default function Navbar(props) {
             Sell
           </div>
           <Link to=''>About</Link>
-          { props.isLoggedIn
+          { !props.isLoggedIn
             ? <div className="logged-out">
                 <div className="link" onClick={() => setLoginModalShow(true)}>Login</div>
                 <div className="link" onClick={() => setRegisterModalShow(true)}>Sign up</div>

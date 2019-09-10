@@ -6,9 +6,21 @@ import Maps from './Maps';
 import Footer from './Footer';
 
 export default class ProductPage extends Component {
+  constructor() {
+    super()
+    this.state = {
+      isEditing: false
+    }
+  }
+
   // componentDidMount() {
   //   this.props.getProduct(this.props.match.params.id)
   // }
+  
+  toggleEdit = () => {
+    this.setState({ isEditing: !this.state.isEditing })
+  }
+  
   render() {
     return (
       <div>
@@ -33,7 +45,22 @@ export default class ProductPage extends Component {
                     <div className="tag-end"></div>
                     <div className="box"></div>
                   </div>
-                  <div>2017 Dodge Charger r/t</div>
+                  { this.state.isEditing 
+                    ? <>
+                        <input className="title-input" type="text"/>
+                        <div className="edit" onClick={this.toggleEdit}>
+                          <i className="fas fa-check"></i>
+                        </div>
+                      </>
+                    : 
+                      <>
+                        <div>2017 Dodge Charger r/t</div> 
+                        <div className="edit" onClick={this.toggleEdit}>
+                          <i className="fas fa-pen"></i>
+                        </div>
+                      </>
+                    }
+                  <div className="delete"><i className="fas fa-trash"></i></div>
                 </div>
                 <div className="subtext">
                   <div className="location-group">

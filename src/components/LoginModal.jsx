@@ -2,8 +2,15 @@ import React from 'react'
 // import { connect } from 'react-redux'
 import { Modal, Button } from 'react-bootstrap'
 import '../assets/sass/components/Modals/LoginModal.scss';
+import Axios from 'axios';
 
 function LoginModal(props) {
+  function login() {
+    // Axios
+    //   post('/auth/login')
+    // props.onHide
+  }
+
   return (
     <Modal
       {...props}
@@ -23,7 +30,7 @@ function LoginModal(props) {
             <input className="input" type="password" placeholder="Password"/>
           </div>
         </div>
-        <Button className="btn-lte-green" onClick={props.onHide}>Login</Button>
+        <Button className="btn-lte-green" onClick={login}>Login</Button>
       <span className="text link">Forgot password?</span>
       </Modal.Body>
       <Modal.Footer>
