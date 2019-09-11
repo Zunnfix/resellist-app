@@ -4,18 +4,23 @@ import Navbar from './Navbar'
 import { Button } from 'react-bootstrap'
 import Maps from './Maps';
 import Footer from './Footer';
+import Axios from 'axios';
 
 export default class ProductPage extends Component {
   constructor() {
     super()
     this.state = {
-      isEditing: false
+      isEditing: false,
+      item: '', // state for edit function
+      price: 0
     }
   }
 
-  // componentDidMount() {
-  //   this.props.getProduct(this.props.match.params.id)
-  // }
+  componentDidMount() {
+    Axios
+      .get('/api/product/:id')
+    // this.props.getProduct(this.props.match.params.id)
+  }
   
   toggleEdit = () => {
     this.setState({ isEditing: !this.state.isEditing })
@@ -41,7 +46,7 @@ export default class ProductPage extends Component {
                 <div className="header">
                   <div className="tag-wrap">
                     <div className="tag-start"></div>
-                    <div className="tag-price">$23,150</div>
+                    <div className="tag-price">${this.state.price}</div>
                     <div className="tag-end"></div>
                     <div className="box"></div>
                   </div>

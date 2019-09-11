@@ -7,7 +7,7 @@ export default function ProductCard(props) {
   const { img, item, price, city, state } = props.product
   return (
     <Card>
-      <Link to="/item" /*to={`/item/${props.product.id}`}*/>
+      <Link to={`/item/${props.product.id}`}>
         <div className="card-img">
           <img src={img} alt="product" />
         </div>

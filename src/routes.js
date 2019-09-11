@@ -7,7 +7,7 @@ import Profile from './components/Profile'
 export default (
     <Switch>
       <Route exact path='/' component={Lander} />
-      <Route path='/item' component={ProductPage} />
+      <Route path='/item/:id' component={ProductPage} />
       <Route path='/profile' component={Profile} />
     </Switch>
   )

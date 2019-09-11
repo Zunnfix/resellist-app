@@ -27,6 +27,7 @@ massive(CONNECTION_STRING).then(db => {
 })
 
 // Endpoints
+app.get('api/product/:id', )
 app.put('/api/edit-product/:id', editProduct)
 app.delete('/api/delete-product/:id', deleteProduct)
 app.post('/api/set-favorite', setFavorite)

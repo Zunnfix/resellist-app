@@ -5,6 +5,7 @@ module.exports = {
     const db = req.app.get('db')
     const { username, password } = req.body
     const info = await db.getUserInfo(username)
+    console.log(req.body)
     const isCorrect = await bcrypt.compare(password, info[0].password)
     if (isCorrect === true) {
       req.session.user = {
@@ -13,7 +14,7 @@ module.exports = {
         lastName: info[0].last_name,
         username,
         email: info[0].email,
-        img: info[0].profile_img
+        img: info[0].avatar
       }
       res.status(200).json(req.session.user)
     } else {
