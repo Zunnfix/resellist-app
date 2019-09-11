@@ -103,7 +103,7 @@ nav {
       }
 
       .user {
-        margin-left: 14px;
+        margin-left: 8px;
       }
 
       .chat {
@@ -122,6 +122,38 @@ nav {
         margin-right: 10px;
       }
 
+      .user {
+        .profile-dropdown {
+          margin-top: -4px;
+          height: 26px;
+
+          .dropdown-toggle {
+            font-size: 19px;
+            color: #fff;
+            margin: 0 -6px 0 -46px;
+            padding: 0 0 0 40px;
+            height: 36px;
+            width: 106px;
+            border-radius: 0;
+          }
+
+          .dropdown-item {
+            padding: 7px 16px;
+            font-family: 'Lato';
+            font-size: 18px;
+            color: #212529;
+          }
+
+          .dropdown-item:hover,
+          .dropdown-item:focus {
+            background-color: #00a97f18;
+          }
+
+          .dropdown-item:active {
+            background-color: #00ab80;
+          }
+        }
+      }
 
       a,
       a:hover,
@@ -147,26 +179,44 @@ nav {
       }
     }
   }
-  
-  .dropdown-toggle:after { 
-    content: none 
+
+  .dropdown-toggle:after {
+    content: none
+  }
+}
+
+.menu-icon {
+  width: 32px;
+  height: 32px;
+  margin: -18px 14px 0 0;
+  display: none;
+  cursor: pointer;
+
+  .btn {
+    background: url(../../images/menu-icon.png) no-repeat center;
+    background-size: 28px 28px;
+    width: 60px;
+    height: 50px;
+    border-radius: 0;
   }
 
-  .menu-icon {
-    width: 32px;
-    height: 32px;
-    margin: -18px 14px 0 0;
-    display: none;
-    cursor: pointer;
-    .btn {
-      background: url(../../images/menu-icon.png) no-repeat center;
-      background-size: 28px 28px;
-      width: 60px;
-      height: 50px;
-      border-radius: 0;
-    }
-    .btn {
+  .dropdown-menu {
+    border-radius: .45rem;
+    padding: 12px 0;
 
+    .dropdown-item {
+      font-family: 'Lato';
+      font-weight: 300;
+      padding: 12px 18px;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      background-color: #00a97f18;
+    }
+
+    .dropdown-item:active {
+      background-color: #00ab80;
     }
   }
 }
@@ -194,13 +244,14 @@ nav {
       }
     }
 
-    .menu-icon {
-      display: block;
+  }
 
-      img {
-        height: 27px;
-        width: auto;
-      }
+  .menu-icon {
+    display: block;
+
+    img {
+      height: 27px;
+      width: auto;
     }
   }
 }
