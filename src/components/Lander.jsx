@@ -1,22 +1,30 @@
 import React, { Component } from 'react'
 import '../assets/sass/components/Lander.scss'
+import { connect } from 'react-redux'
+import { updateSession } from '../redux/reducers/userReducer';
 import Navbar from './Navbar'
 import ProductCard from './ProductCard'
 import { Link } from 'react-router-dom'
 import { Dropdown, DropdownButton } from 'react-bootstrap'
 import Axios from 'axios';
 
-export default class Lander extends Component {
-  constructor() {
-    super()
+class Lander extends Component {
+  constructor(props) {
+    super(props)
     this.state = {
       products: [],
-      isLoggedIn: false
+      login: props.login
     }
   }
 
   componentDidMount() {
     this.getProducts()
+    Axios.get('/api/user')
+    .then(res => {
+      this.props.updateSession(res.data)
+    })
+    .catch(err => console.log(err))
+    console.log(this.state.login)
   }
 
   getProducts = () => {
@@ -40,7 +48,7 @@ export default class Lander extends Component {
   render() {
     return (
       <div>
-        <Navbar isLoggedIn={this.state.isLoggedIn} />
+        <Navbar />
         <header>
           <div className="header-links">
             <Link to=''>Cars & trucks</Link>
@@ -79,3 +87,11 @@ export default class Lander extends Component {
     );
   }
 }
+
+function mapStateToProps(reduxState) {
+  return {
+    login: reduxState.userReducer.login
+  }
+}
+
+export default connect(mapStateToProps, { updateSession })(Lander);

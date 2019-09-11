@@ -12,7 +12,7 @@ const initialState = {
 }
 
 // const SET_ID = 'SET_ID'
-// const SET_USER_ID = 'SET_USER_ID'
+const SET_USER_ID = 'SET_USER_ID'
 const SET_PRICE = 'SET_PRICE'
 const SET_ITEM = 'SET_ITEM'
 const SET_CATEGORY = 'SET_CATEGORY'
@@ -20,6 +20,12 @@ const SET_CITY = 'SET_CITY'
 const SET_STATE = 'SET_STATE'
 const SET_IMG = 'SET_IMG'
 
+export function setUserId(value) {
+  return {
+    type: SET_USER_ID,
+    payload: value
+  }
+}
 export function setItem(value) {
   return {
     type: SET_ITEM,
@@ -60,6 +66,11 @@ export function setState(value) {
 export default function reducer(state=initialState, action) {
   const { type, payload } = action
   switch(type) {
+    case SET_USER_ID:
+      return {
+        ...state,
+        user_id: payload
+      }
     case SET_IMG:
       return {
         ...state,
