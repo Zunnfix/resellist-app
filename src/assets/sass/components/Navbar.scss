@@ -147,9 +147,27 @@ nav {
       }
     }
   }
+  
+  .dropdown-toggle:after { 
+    content: none 
+  }
 
   .menu-icon {
+    width: 32px;
+    height: 32px;
+    margin: -18px 14px 0 0;
     display: none;
+    cursor: pointer;
+    .btn {
+      background: url(../../images/menu-icon.png) no-repeat center;
+      background-size: 28px 28px;
+      width: 60px;
+      height: 50px;
+      border-radius: 0;
+    }
+    .btn {
+
+    }
   }
 }
 
@@ -178,7 +196,6 @@ nav {
 
     .menu-icon {
       display: block;
-      padding: 10px;
 
       img {
         height: 27px;
