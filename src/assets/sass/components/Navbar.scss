@@ -1,3 +1,7 @@
+@import '../variables/variables.scss';
+@import '../mixins/mixins.scss';
+@import '../extends/extends.scss';
+
 nav {
   font-family: 'LatoBOLD';
   position: fixed;
@@ -12,7 +16,7 @@ nav {
 
   .icon {
     display: none;
-    height: 40px;
+    height: 32px;
     width: auto;
   }
 
@@ -20,14 +24,14 @@ nav {
   .btn-lte-green:hover,
   .btn-lte-green:focus,
   .btn-lte-green:active {
-    border-color: #00ab80 !important;
-    background-color: #00ab80 !important;
+    border-color: $green !important;
+    background-color: $green !important;
     box-shadow: none !important;
   }
 
   .btn-lte-green:hover {
-    border-color: #05a57d !important;
-    background-color: #05a57d !important;
+    border-color: $hgreen !important;
+    background-color: $hgreen !important;
   }
 
   .form-control,
@@ -35,7 +39,7 @@ nav {
   .form-control::placeholder {
     width: 400px;
     font-family: 'Lato';
-    color: #fff;
+    color: $w;
     border: none;
     background-color: #009770;
     border-top-right-radius: 0;
@@ -54,7 +58,7 @@ nav {
 
   .navbar-light .navbar-brand,
   .navbar-light .navbar-brand:hover {
-    color: #fff;
+    color: $w;
   }
 
   .nav-container {
@@ -63,11 +67,12 @@ nav {
     align-items: center;
     width: 1475px;
     font-size: 19px;
-    color: #fff;
+    color: $w;
 
     .logo {
       height: 26px;
       width: auto;
+      margin-bottom: 4px;
     }
 
     form {
@@ -116,8 +121,7 @@ nav {
       }
 
       img {
-        width: 30px;
-        height: 30px;
+        @include link(30px);
         border-radius: 20px;
         margin-right: 10px;
       }
@@ -186,8 +190,7 @@ nav {
 }
 
 .menu-icon {
-  width: 32px;
-  height: 32px;
+  @include link(32px);
   margin: -18px 14px 0 0;
   display: none;
   cursor: pointer;
@@ -216,7 +219,7 @@ nav {
     }
 
     .dropdown-item:active {
-      background-color: #00ab80;
+      background-color: $green;
     }
   }
 }
