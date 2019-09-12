@@ -11,32 +11,47 @@ export default class ProductPage extends Component {
     super()
     this.state = {
       isEditing: false,
-      item: '', // state for edit function
-      price: 0
+      product: {},
+      item: ''
     }
   }
 
   componentDidMount() {
+    const id = this.props.match.params.id
     Axios
-      .get('/api/product/:id')
+      .get(`/api/product/${id}`)
+      .then(res => this.setState({ product: res.data[0] }))
+      .catch(err => console.log(err))
     // this.props.getProduct(this.props.match.params.id)
   }
-  
+
   toggleEdit = () => {
     this.setState({ isEditing: !this.state.isEditing })
   }
-  
+
+  handleInputChange = (e) => {
+    const { name, value } = e.target
+    this.setState({ [name]: value })
+  }
+
+  submitChange = (id, item) => {
+    Axios
+      .put(`/api/edit-product/${id}`, { item })
+      .then(res => res.data)
+    this.toggleEdit()
+  }
+
   render() {
+    const { img, price, item, city, state, } = this.state.product
     return (
       <div>
         <Navbar />
         <div className="product-header">
           <div className="background">
-            <img src="https://photos.offerup.com/CATiw0Ma5OBsuZDcRosfTzvVBlY=/600x450/60c5/60c5ae9bbced46b9bacb43d781a4865d.jpg" alt="" />
+            <img src={img} alt="Whoops! Something went wrong." />
           </div>
           <div className="img-list">
-            <img src="https://photos.offerup.com/CATiw0Ma5OBsuZDcRosfTzvVBlY=/600x450/60c5/60c5ae9bbced46b9bacb43d781a4865d.jpg" alt="" />
-            <img src="https://photos.offerup.com/WcaNJOIJqSycE4hjpBuvj_Je7ng=/600x450/eab1/eab19ac932a74767956ebb4483571449.jpg" alt="" />
+            <img src={img} alt="Whoops! Something went wrong." />
           </div>
         </div>
         <div className="product-container">
@@ -46,20 +61,20 @@ export default class ProductPage extends Component {
                 <div className="header">
                   <div className="tag-wrap">
                     <div className="tag-start"></div>
-                    <div className="tag-price">${this.state.price}</div>
+                    <div className="tag-price">${price}</div>
                     <div className="tag-end"></div>
                     <div className="box"></div>
                   </div>
                   { this.state.isEditing 
                     ? <>
-                        <input className="title-input" type="text"/>
-                        <div className="edit" onClick={this.toggleEdit}>
+                        <input className="title-input" name="item" type="text" onChange={this.handleInputChange} />
+                        <div className="edit" onClick={this.submitChange}>
                           <i className="fas fa-check"></i>
                         </div>
                       </>
                     : 
                       <>
-                        <div>2017 Dodge Charger r/t</div> 
+                        <div>{item}</div> 
                         <div className="edit" onClick={this.toggleEdit}>
                           <i className="fas fa-pen"></i>
                         </div>
@@ -69,7 +84,7 @@ export default class ProductPage extends Component {
                 </div>
                 <div className="subtext">
                   <div className="location-group">
-                    <span className="location">Dallas, TX </span><i className="fas fa-map-marker-alt"></i>
+                    <span className="location">{city}, {state} </span><i className="fas fa-map-marker-alt"></i>
                   </div>
                   <div className="category-group">
                     Posted in <span className="category">Cars & Trucks</span>

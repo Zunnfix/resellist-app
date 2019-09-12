@@ -38,4 +38,10 @@ module.exports = {
     const deleteProduct = await db.deleteProduct(id)
     res.status(200).json(deleteProduct)
   },
+  getProduct: async function (req, res) {
+    const db = req.app.get('db')
+    const { id } = req.params
+    const getProduct = await db.getProductInfo(id)
+    res.status(200).json(getProduct)
+  }
 }

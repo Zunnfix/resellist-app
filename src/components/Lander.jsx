@@ -30,7 +30,10 @@ class Lander extends Component {
   getProducts = () => {
     Axios
       .get('/api/all-products')
-      .then(res => { this.setState({ products: res.data }); console.log() })
+      .then(res => { 
+        this.setState({ products: res.data }) 
+        console.log() 
+      })
       .catch(err => console.log(err))
   }
 
