@@ -1,3 +1,5 @@
+@import '../extends/extends.scss';
+
 footer {
   background: url(https://assets.offerup.com/web/images/footer-cover.78e3f94c.jpg) no-repeat;
   background-position: 50% 50%;
@@ -12,8 +14,7 @@ footer {
     justify-content: space-between;
     width: 600px;
     .links {
-      display: flex;
-      justify-content: center;
+      @extend %flex-center;
       .link {
         margin: 0 15px;
       }
@@ -25,8 +26,7 @@ footer {
       text-decoration: underline;
     }
     .social {
-      display: flex;
-      justify-content: center;
+      @extend %flex-center;
       .social-link {
         width: 30px;
         height: 30px;
@@ -39,16 +39,14 @@ footer {
         background-color: #0f4e48;
       }
       .fab {
-        display: flex;
+        @extend %flex-center;
         align-items: center;
-        justify-content: center;
         font-size: 16px;
         height: 100%;
       }
     }
     .copyright {
-      display: flex;
-      justify-content: center;
+      @extend %flex-center;
       font-size: 14px;
     }
   }
