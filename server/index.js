@@ -1,3 +1,4 @@
+const path = require('path');
 require('dotenv').config();
 const express = require('express');
 const massive = require('massive');
@@ -20,6 +21,8 @@ app.use(session({
     maxAge: 1000 * 60 * 20 // * 24
   }
 }))
+
+app.use( express.static( `${__dirname}/../build` ));
 
 massive(CONNECTION_STRING).then(db => {
   app.set('db', db);

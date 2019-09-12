@@ -5,11 +5,13 @@ import { Button } from 'react-bootstrap'
 import Maps from './Maps';
 import Footer from './Footer';
 import Axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 export default class ProductPage extends Component {
   constructor() {
     super()
     this.state = {
+      redirect: false,
       isEditing: false,
       product: {},
       item: ''
@@ -34,17 +36,30 @@ export default class ProductPage extends Component {
     this.setState({ [name]: value })
   }
 
-  submitChange = (id, item) => {
+  submitChange = () => {
+    const { item } = this.state
+    const { id } = this.state.product
     Axios
       .put(`/api/edit-product/${id}`, { item })
-      .then(res => res.data)
+      .then(res => {console.log(res)
+        this.setState({ product: res.data[0] })
+      })
     this.toggleEdit()
+  }
+
+  deleteProduct = () => {
+    const { id } = this.state.product
+    Axios
+      .delete(`/api/delete-product/${id}`)
+      .then( this.setState({ redirect: true }) )
+      .catch(err => console.log(err));
   }
 
   render() {
     const { img, price, item, city, state, } = this.state.product
     return (
       <div>
+       { this.state.redirect && <Redirect to='/' />}
         <Navbar />
         <div className="product-header">
           <div className="background">
@@ -80,7 +95,7 @@ export default class ProductPage extends Component {
                         </div>
                       </>
                     }
-                  <div className="delete"><i className="fas fa-trash"></i></div>
+                  <div className="delete" onClick={this.deleteProduct}><i className="fas fa-trash"></i></div>
                 </div>
                 <div className="subtext">
                   <div className="location-group">
