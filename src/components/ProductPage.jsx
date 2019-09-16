@@ -86,16 +86,16 @@ export default class ProductPage extends Component {
                         <div className="edit" onClick={this.submitChange}>
                           <i className="fas fa-check"></i>
                         </div>
+                        <div className="edit" onClick={this.toggleEdit}><i class="fas fa-times"></i></div>
                       </>
-                    : 
-                      <>
+                    : <>
                         <div>{item}</div> 
                         <div className="edit" onClick={this.toggleEdit}>
                           <i className="fas fa-pen"></i>
                         </div>
+                        <div className="delete" onClick={this.deleteProduct}><i className="fas fa-trash"></i></div>
                       </>
                     }
-                  <div className="delete" onClick={this.deleteProduct}><i className="fas fa-trash"></i></div>
                 </div>
                 <div className="subtext">
                   <div className="location-group">
