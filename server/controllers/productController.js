@@ -43,5 +43,10 @@ module.exports = {
     const { id } = req.params
     const getProduct = await db.getProductInfo(id)
     res.status(200).json(getProduct)
+  },
+  getCategory: async function (req, res) {
+    const db = req.app.get('db')
+    const getCategory = await db.getCategory()
+    res.status(200).json(getCategory)
   }
 }

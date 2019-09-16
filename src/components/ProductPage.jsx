@@ -13,6 +13,7 @@ export default class ProductPage extends Component {
     this.state = {
       redirect: false,
       isEditing: false,
+      category: '',
       product: {},
       item: ''
     }
@@ -25,6 +26,15 @@ export default class ProductPage extends Component {
       .then(res => this.setState({ product: res.data[0] }))
       .catch(err => console.log(err))
     // this.props.getProduct(this.props.match.params.id)
+    this.getCategory()
+  }
+  
+  getCategory() {
+    const id = this.props.match.params.id
+    Axios
+      .get(`/api/get-category/${id}`)
+      .then(res => this.setState({ category: res }))
+      .catch(err => console.log(err))
   }
 
   toggleEdit = () => {
@@ -56,7 +66,7 @@ export default class ProductPage extends Component {
   }
 
   render() {
-    const { img, price, item, city, state, } = this.state.product
+    const { img, price, item, city, state, category } = this.state.product
     return (
       <div>
        { this.state.redirect && <Redirect to='/' />}
@@ -102,7 +112,7 @@ export default class ProductPage extends Component {
                     <span className="location">{city}, {state} </span><i className="fas fa-map-marker-alt"></i>
                   </div>
                   <div className="category-group">
-                    Posted in <span className="category">Cars & Trucks</span>
+                    Posted in <span className="category">{category}</span>
                   </div>
                 </div>
               </div>
